@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Панель управления -->
+      <div class="control-panel">
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="uk">🇺🇦 UA</button>
+          <button class="lang-btn" data-lang="ru">🇷🇺 RU</button>
+          <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
+        <button id="exit-btn" class="btn-exit" data-i18n="exit">Вийти</button>
+      </div>
+
+      <h1 data-i18n="title">Мої завдання</h1>
+
+      <div class="tabs">
+        <button class="tab active" data-tab="day-content" data-i18n="day">
+          День
+        </button>
+        <button class="tab" data-tab="week-content" data-i18n="week">
+          Тиждень
+        </button>
+        <button class="tab" data-tab="month-content" data-i18n="month">
+          Місяць
+        </button>
+      </div>
+
+      <!-- День -->
+      <div id="day-content" class="tab-content" style="display: block">
+        <div class="header">
+          <h2 data-i18n="day">Завдання на день</h2>
+          <button id="day-add" class="btn-add" data-i18n="add">+ Додати</button>
+        </div>
+        <div id="day-tasks" class="tasks-list"></div>
+      </div>
+
+      <!-- Тиждень -->
+      <div id="week-content" class="tab-content" style="display: none">
+        <div class="header">
+          <h2 data-i18n="week">Завдання на тиждень</h2>
+          <button id="week-add" class="btn-add" data-i18n="add">
+            + Додати
+          </button>
+        </div>
+        <div id="week-tasks" class="tasks-list"></div>
+      </div>
+
+      <!-- Місяць -->
+      <div id="month-content" class="tab-content" style="display: none">
+        <div class="header">
+          <h2 data-i18n="month">Завдання на місяць</h2>
+          <button id="month-add" class="btn-add" data-i18n="add">
+            + Додати
+          </button>
+        </div>
+        <div id="month-tasks" class="tasks-list"></div>
+      </div>
+
+      <!-- Модальне вікно для додавання/редагування -->
+      <div id="modal" class="modal" style="display: none">
+        <div class="modal-content">
+          <h3 id="modal-title" data-i18n="add_task">Додати завдання</h3>
+          <input
+            type="text"
+            id="task-input"
+            data-i18n-placeholder="enter_task"
+            placeholder="Введіть завдання..."
+          />
+          <input type="date" id="task-date" class="date-input" />
+          <div class="modal-buttons">
+            <button id="modal-save" class="btn-save" data-i18n="save">
+              Зберегти
+            </button>
+            <button id="modal-cancel" class="btn-cancel" data-i18n="cancel">
+              Скасувати
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Capacitor Runtime -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@capacitor/core@latest/dist/capacitor.js"
+    ></script>
+    <script src="./src/js/renderer.js"></script>
+  </body>
+</html>

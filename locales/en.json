@@ -1,0 +1,10 @@
+{
+  "title": "My Tasks",
+  "day": "Tasks for day",
+  "week": "Tasks for week",
+  "month": "Tasks for month",
+  "add": "+ Add",
+  "save": "Save",
+  "cancel": "Cancel",
+  "exit": "Exit"
+}
